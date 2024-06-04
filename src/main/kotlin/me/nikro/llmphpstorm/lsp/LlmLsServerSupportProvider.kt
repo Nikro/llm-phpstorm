@@ -1,4 +1,4 @@
-package co.huggingface.llmintellij.lsp
+package me.nikro.llmphpstorm.lsp
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile

@@ -1,9 +1,9 @@
-package co.huggingface.llmintellij
+package me.nikro.llmphpstorm
 
-import co.huggingface.llmintellij.lsp.CompletionParams
-import co.huggingface.llmintellij.lsp.LlmLsGetCompletionsRequest
-import co.huggingface.llmintellij.lsp.LlmLsServerSupportProvider
-import co.huggingface.llmintellij.lsp.Position
+import me.nikro.llmphpstorm.lsp.CompletionParams
+import me.nikro.llmphpstorm.lsp.LlmLsGetCompletionsRequest
+import me.nikro.llmphpstorm.lsp.LlmLsServerSupportProvider
+import me.nikro.llmphpstorm.lsp.Position
 import com.intellij.codeInsight.inline.completion.InlineCompletionElement
 import com.intellij.codeInsight.inline.completion.InlineCompletionEvent
 import com.intellij.codeInsight.inline.completion.InlineCompletionProvider

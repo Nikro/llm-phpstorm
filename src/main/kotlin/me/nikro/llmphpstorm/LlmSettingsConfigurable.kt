@@ -1,4 +1,4 @@
-package co.huggingface.llmintellij
+package me.nikro.llmphpstorm
 
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.Disposable

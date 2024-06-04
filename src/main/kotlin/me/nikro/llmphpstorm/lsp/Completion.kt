@@ -1,4 +1,4 @@
-package co.huggingface.llmintellij.lsp
+package me.nikro.llmphpstorm.lsp
 
 class Completion(val generated_text: String)
 

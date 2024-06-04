@@ -1,4 +1,4 @@
-package co.huggingface.llmintellij
+package me.nikro.llmphpstorm
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
@@ -35,7 +35,7 @@ sealed class TokenizerConfig {
 }
 
 @State(
-    name = "co.huggingface.llmintellij.LlmSettingsState",
+    name = "me.nikro.llmphpstorm.LlmSettingsState",
     storages = [Storage("LlmSettingsPlugin.xml")]
 )
 class LlmSettingsState: PersistentStateComponent<LlmSettingsState?> {

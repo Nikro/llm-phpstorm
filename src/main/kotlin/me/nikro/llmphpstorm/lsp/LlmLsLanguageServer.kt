@@ -1,8 +1,8 @@
-package co.huggingface.llmintellij.lsp
+package me.nikro.llmphpstorm.lsp
 
-import co.huggingface.llmintellij.FimParams
-import co.huggingface.llmintellij.QueryParams
-import co.huggingface.llmintellij.TokenizerConfig
+import me.nikro.llmphpstorm.FimParams
+import me.nikro.llmphpstorm.QueryParams
+import me.nikro.llmphpstorm.TokenizerConfig
 import org.eclipse.lsp4j.TextDocumentIdentifier
 import org.eclipse.lsp4j.jsonrpc.services.JsonRequest
 import org.eclipse.lsp4j.jsonrpc.services.JsonSegment

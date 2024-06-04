@@ -1,6 +1,6 @@
-package co.huggingface.llmintellij.lsp
+package me.nikro.llmphpstorm.lsp
 
-import co.huggingface.llmintellij.LlmSettingsState
+import me.nikro.llmphpstorm.LlmSettingsState
 import com.intellij.execution.configurations.GeneralCommandLine
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.project.Project

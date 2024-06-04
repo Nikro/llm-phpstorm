@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>me.nikro.llm-phpstorm</id>
+    <id>me.nikro.llmphpstorm</id>
 
     <name>LLM for PhpStorm (PHPStorm Fork)</name>
 
@@ -29,13 +29,13 @@
     <depends>com.intellij.modules.php</depends> <!-- Changed to depend on PHP module -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <inline.completion.provider implementation="co.yourname.llmphpstorm.LlmLsCompletionProvider"></inline.completion.provider>
-        <platform.lsp.serverSupportProvider implementation="co.yourname.llmphpstorm.lsp.LlmLsServerSupportProvider"/>
+        <inline.completion.provider implementation="me.nikro.llmphpstorm.LlmLsCompletionProvider"></inline.completion.provider>
+        <platform.lsp.serverSupportProvider implementation="me.nikro.llmphpstorm.lsp.LlmLsServerSupportProvider"/>
         <applicationConfigurable
                 parentId="tools"
-                instance="co.yourname.llmphpstorm.LlmSettingsConfigurable"
-                id="co.yourname.llmphpstorm.LlmSettingsConfigurable"
+                instance="me.nikro.llmphpstorm.LlmSettingsConfigurable"
+                id="me.nikro.llmphpstorm.LlmSettingsConfigurable"
                 displayName="LLM Settings"/>
-        <applicationService serviceImplementation="co.yourname.llmphpstorm.LlmSettingsState"/>
+        <applicationService serviceImplementation="me.nikro.llmphpstorm.LlmSettingsState"/>
     </extensions>
 </idea-plugin>

@@ -1,4 +1,4 @@
-package co.huggingface.llmintellij.lsp
+package me.nikro.llmphpstorm.lsp
 
 import com.intellij.platform.lsp.api.LspServer
 import com.intellij.platform.lsp.api.requests.LspRequest
