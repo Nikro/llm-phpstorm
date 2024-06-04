@@ -1,13 +1,12 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>co.huggingface.llm-intellij</id>
+    <id>me.nikro.llm-phpstorm</id>
 
-    <name>LLM</name>
+    <name>LLM for PhpStorm (PHPStorm Fork)</name>
 
-    <vendor email="support@huggingface.co" url="https://huggingface.co">hugging-face</vendor>
+    <vendor email="nikro.md@gmail.com" url="https://nikro.me">Nikro (Sergiu Nagailic)</vendor> 
 
     <description><![CDATA[
-    <b>llm-intellij</b> is an extension for all things LLM. It uses <a href="https://github.com/huggingface/llm-ls">llm-ls</a> as its backend.
+    <b>llm-phpstorm</b> is an extension for all things LLM. It uses <a href="https://github.com/huggingface/llm-ls">llm-ls</a> as its backend.
     <h3>Features</h3>
     <h4>Code completion</h4>
     This plugin supports "ghost-text" code completion, à la Copilot.
@@ -24,19 +23,19 @@
     <h4>Code attribution</h4>
     Hit Cmd+shift+a to check if the generated code is in The Stack. This is a rapid first-pass attribution check using https://stack.dataportraits.org. We check for sequences of at least 50 characters that match a Bloom filter. This means false positives are possible and long enough surrounding context is necessary (see the paper for details on n-gram striding and sequence length). The dedicated Stack search tool is a full dataset index and can be used for a complete second pass.
 
-    More info at <a href="https://github.com/huggingface/llm-intellij">llm-intellij</a>
+    More info at <a href="https://github.com/your-repo/llm-phpstorm">llm-phpstorm</a>
   ]]></description>
 
-    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.php</depends> <!-- Changed to depend on PHP module -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <inline.completion.provider implementation="co.huggingface.llmintellij.LlmLsCompletionProvider"></inline.completion.provider>
-        <platform.lsp.serverSupportProvider implementation="co.huggingface.llmintellij.lsp.LlmLsServerSupportProvider"/>
+        <inline.completion.provider implementation="co.yourname.llmphpstorm.LlmLsCompletionProvider"></inline.completion.provider>
+        <platform.lsp.serverSupportProvider implementation="co.yourname.llmphpstorm.lsp.LlmLsServerSupportProvider"/>
         <applicationConfigurable
                 parentId="tools"
-                instance="co.huggingface.llmintellij.LlmSettingsConfigurable"
-                id="co.huggingface.llmintellij.LlmSettingsConfigurable"
+                instance="co.yourname.llmphpstorm.LlmSettingsConfigurable"
+                id="co.yourname.llmphpstorm.LlmSettingsConfigurable"
                 displayName="LLM Settings"/>
-        <applicationService serviceImplementation="co.huggingface.llmintellij.LlmSettingsState"/>
+        <applicationService serviceImplementation="co.yourname.llmphpstorm.LlmSettingsState"/>
     </extensions>
 </idea-plugin>
