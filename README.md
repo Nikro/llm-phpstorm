@@ -1,7 +1,7 @@
-# LLM powered development for IntelliJ
+# LLM powered development for PhpStorm
 
 <!-- Plugin description -->
-**llm-intellij** is a plugin for all things LLM. It uses [**llm-ls**](https://github.com/huggingface/llm-ls) as a backend.
+**llm-phpstorm** is a plugin for all things LLM. It uses [**llm-ls**](https://github.com/huggingface/llm-ls) as a backend.
 
 > [!NOTE]
 > When using the Inference API, you will probably encounter some limitations. Subscribe to the *PRO* plan to avoid getting rate limited in the free tier.
@@ -49,7 +49,7 @@ All of the above still applies, but note:
 
 ### Models
 
-**llm-intellij** is assumed to be compatible with any model that generates code.
+**llm-phpstorm** is assumed to be compatible with any model that generates code.
 
 Here are some configs for popular models in JSON format that you can put in your Settings (`Cmd+,` > `LLM Settings`)
 
@@ -58,7 +58,7 @@ Here are some configs for popular models in JSON format that you can put in your
 ```json
 {
    "tokensToClear": [
-      "<|endoftext|>"
+      ""
    ],
    "fim": {
       "enabled": true,
@@ -101,17 +101,16 @@ Here are some configs for popular models in JSON format that you can put in your
 > [!NOTE]
 > Spaces are important here
 
-
 ### [**llm-ls**](https://github.com/huggingface/llm-ls)
 
-By default, **llm-ls** is installed by **llm-intellij** the first time it is loaded. The binary is downloaded from the [release page](https://github.com/huggingface/llm-ls/releases) and stored in:
+By default, **llm-ls** is installed by **llm-phpstorm** the first time it is loaded. The binary is downloaded from the [release page](https://github.com/huggingface/llm-ls/releases) and stored in:
 ```shell
-"$HOME/.cache/llm_intellij/bin"
+"$HOME/.cache/llm_phpstorm/bin"
 ```
 
 When developing locally or if you built your own binary because your platform is not supported, you can set the `llm-ls` > `Binary path` setting to the path of the binary.
 
-`llm-ls` > `Version` is used only when **llm-intellij** downloads **llm-ls** from the release page.
+`llm-ls` > `Version` is used only when **llm-phpstorm** downloads **llm-ls** from the release page.
 
 You can also set the log level for **llm-ls** with `llm-ls` > `Log level`, which can take any of the usual `info`, `warn`, `error`, etc as a value.
 The log file is located in:

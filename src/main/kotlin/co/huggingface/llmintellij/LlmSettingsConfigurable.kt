@@ -1,15 +1,14 @@
 package co.huggingface.llmintellij
 
 import com.intellij.openapi.options.Configurable
+import com.intellij.openapi.Disposable
+import com.intellij.openapi.util.Disposer
 import org.jetbrains.annotations.Nls
 import javax.swing.JComponent
 
-
-class LlmSettingsConfigurable : Configurable {
+class LlmSettingsConfigurable : Configurable, Disposable {
     private var settingsComponent: LlmSettingsComponent? = null
 
-    // A default constructor with no arguments is required because this implementation
-    // is registered in an applicationConfigurable EP
     @Nls(capitalization = Nls.Capitalization.Title)
     override fun getDisplayName(): String {
         return "LLM Settings"
@@ -21,6 +20,7 @@ class LlmSettingsConfigurable : Configurable {
 
     override fun createComponent(): JComponent? {
         settingsComponent = LlmSettingsComponent()
+        Disposer.register(this, settingsComponent!!)
         return settingsComponent?.rootPanel
     }
 
@@ -90,5 +90,10 @@ class LlmSettingsConfigurable : Configurable {
 
     override fun disposeUIResources() {
         settingsComponent = null
+    }
+
+    override fun dispose() {
+        // Ensure all resources are disposed of correctly
+        settingsComponent?.let { Disposer.dispose(it) }
     }
 }

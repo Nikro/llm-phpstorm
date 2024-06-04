@@ -2,6 +2,7 @@ package co.huggingface.llmintellij
 
 import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.ui.TextFieldWithBrowseButton
+import com.intellij.openapi.Disposable
 import com.intellij.ui.TitledSeparator
 import com.intellij.ui.components.JBCheckBox
 import com.intellij.ui.components.JBLabel
@@ -17,7 +18,7 @@ import javax.swing.JPanel
 import javax.swing.event.DocumentEvent
 import javax.swing.event.DocumentListener
 
-class LlmSettingsComponent {
+class LlmSettingsComponent: Disposable {
     val rootPanel: JPanel = JPanel()
     private val apiTokenLabel: JBLabel
     private val apiToken: JBPasswordField
@@ -219,6 +220,42 @@ class LlmSettingsComponent {
         llmLsSubsectionPanel.add(lspLogLevel)
 
     }
+
+    override fun dispose() {
+        // Dispose of any components that implement Disposable
+        // Usually, you don't need to manually dispose of Swing components like JBTextField, JBCheckBox, etc.,
+        // but we'll ensure any additional cleanup if necessary.
+
+        // Clear the text fields by setting them to empty strings
+        apiToken.text = ""
+        model.text = ""
+        tokensToClear.text = ""
+        maxNewTokens.text = ""
+        temperature.text = ""
+        topP.text = ""
+        stopTokens.text = ""
+        fimPrefix.text = ""
+        fimMiddle.text = ""
+        fimSuffix.text = ""
+        lspBinaryPath.text = ""
+        lspVersion.text = ""
+        lspLogLevel.text = ""
+        tokenizerConfigLocalPath.text = ""
+        tokenizerConfigHuggingFaceRepository.text = ""
+        tokenizerConfigDownloadUrl.text = ""
+        tokenizerConfigDownloadTo.text = ""
+        contextWindow.text = ""
+        
+        // Set checkboxes to false
+        fim.isSelected = false
+        tlsSkipVerifyInsecure.isSelected = false
+        enableGhostText.isSelected = false
+        
+        // Clear selection in the combo box
+        tokenizerConfig.selectedIndex = -1
+    }
+
+
 
     val preferredFocusedComponent: JComponent
         get() = model

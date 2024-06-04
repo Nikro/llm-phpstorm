@@ -1,1 +1,1 @@
-rootProject.name = "llm-intellij"
+rootProject.name = "llm-phpstorm"
